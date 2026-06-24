@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 10 15;
+    --surface: 18 18 26;
+    --border: 30 30 46;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-body antialiased;
+  }
+
+  /* Monospaced figures for all numeric/data displays */
+  .font-mono {
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.3);
+  }
+
+  /* Visible keyboard focus ring everywhere */
+  :focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e1e2e;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a2a3d;
+  }
+}
+
+@layer utilities {
+  .skeleton {
+    @apply animate-pulse bg-border/60 rounded-md;
+  }
+
+  .card-surface {
+    @apply bg-surface border border-border rounded-lg;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
