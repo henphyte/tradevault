@@ -40,7 +40,7 @@ const config: Config = {
           from: { strokeDashoffset: "1000" },
           to: { strokeDashoffset: "0" },
         },
-        pulse-glow: {
+        "pulse-glow": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.6" },
         },
